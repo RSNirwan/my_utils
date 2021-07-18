@@ -16,6 +16,7 @@ setuptools.setup(
         "dev":[
             "pytest>=6.0",
             "pytest-cov==2.10.1",
+            "black>=21.7b0",
         ],
     },
 )
