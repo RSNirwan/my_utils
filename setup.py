@@ -8,12 +8,12 @@ setuptools.setup(
     author_email="rajbir.nirwan@gmail.com",
     description="Utility functions",
     packages=setuptools.find_packages(),
-    python_requires='>=3.7',
+    python_requires=">=3.7",
     install_requires=[
-	"pathos>=0.2.8",
+        "pathos>=0.2.8",
     ],
     extras_require={
-        "dev":[
+        "dev": [
             "pytest>=6.0",
             "pytest-cov==2.10.1",
             "black>=21.7b0",

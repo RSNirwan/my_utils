@@ -9,3 +9,9 @@ def test_batch():
         assert l_batch == expected_2[i]
     for i, l_batch in enumerate(utils.batch(l, n=3)):
         assert l_batch == expected_3[i]
+
+
+def test_maf():
+    f = [lambda x: x + 1, lambda x: x + 2, lambda x: x + 3]
+    a = 2
+    assert list(utils.maf(f, a)) == [3, 4, 5]
