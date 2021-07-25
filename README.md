@@ -11,6 +11,8 @@ pip install git+https://github.com/RSNirwan/my_utils
 ```
 
 ### Usage
+
+#### Basics
 ```python
 #from my_utils import *
 from my_utils import batch, pmap, maf, pmaf
@@ -28,4 +30,31 @@ fs = [lambda x: x + 1, lambda x: x + 2]
 param = 2
 maf(fs, param)  # equivalent to map. Inputs are multiple functions and only one parameter.
 pmaf(fs, param)  # parallel maf
+```
+
+#### Timer
+```python
+from time import sleep
+from my_utils.decorators import timer
+
+@timer
+def add5(x):
+    sleep(2)
+    return x + 5
+
+_ = add5(1) # prints: timer(add5): 2.0010859966278076[sec]
+```
+
+#### Shallow cache
+```python
+from time import sleep
+from my_utils.decorators import shallow_cache
+
+@shallow_cache
+def add5(x):
+    sleep(2)
+    return x + 5
+
+_ = add5(1) # takes 2 sec to run the function
+_ = add5(1) # returns cached results immediately
 ```
