@@ -58,3 +58,17 @@ def add5(x):
 _ = add5(1) # takes 2 sec to run the function
 _ = add5(1) # returns cached results immediately
 ```
+
+#### Scale
+```python
+import numpy as np
+from my_utils.scale import Constant, Exponential, expectation
+
+@expectation(axis0=Constant(), axis1=Exponential(0.4))
+def mape_mat(real: "matrix", pred: "matrix") -> "matrix":
+    return np.fabs(real - pred) / np.fabs(real)
+
+real = np.random.normal(size=(10, 12))
+pred = real + 0.01 * np.random.normal(size=(10, 12))
+expec = mape_mat(real, pred)
+```

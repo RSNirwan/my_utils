@@ -11,6 +11,7 @@ setuptools.setup(
     python_requires=">=3.7",
     install_requires=[
         "pathos>=0.2.8",
+        "numpy>=1.21.2",
     ],
     extras_require={
         "dev": [
